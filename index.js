@@ -45,7 +45,7 @@ client.once('ready', async () => {
                     .setRequired(true))
     ].map(command => command.toJSON());
 
-    const rest = new REST({ version: '10' }).setToken('MTU2NzIzODU3OTU2MDkwNjc4Mg.Gzv94l.GAd3riAEHXEXxS3Sm1LpJ-HP8zGunS8PahU-OY');
+    const rest = new REST({ version: '10' }).setToken(process.env.BOT_TOKEN);
 
     try {
         await rest.put(
@@ -157,4 +157,4 @@ client.on('messageCreate', async message => {
     }
 });
 
-client.login('MTU2NzIzODU3OTU2MDkwNjc4Mg.Gzv94l.GAd3riAEHXEXxS3Sm1LpJ-HP8zGunS8PahU-OY');
+client.login(process.env.BOT_TOKEN);
